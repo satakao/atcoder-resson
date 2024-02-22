@@ -6,5 +6,10 @@
 
 N = gets.to_i
 T, A = gets.split.map(&:to_i)
+# h = 候補の標高
+# 計算してそこから目標のA度を引くことで、一番値が小さいものが答えになるため引いた結果をdiffに代入する。
+# absを入れることで結果が - でも関係なく差分を比較できる
 diff = gets.split.map(&:to_i).map{|h| (T-h*0.006-A).abs}
+# 候補N個分diffを１つずつ取り出し最小値のインデックスを取り出し0から始まるため+1することで地点に変換している
+# min_byは最小値のインデックスを取得する
 puts N.times.min_by{|i| diff[i]} + 1

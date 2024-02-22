@@ -7,8 +7,11 @@ n = gets.chomp.to_i
 a = gets.chomp.split.map{|t| t.to_i}
 
 ans = 0
+# aの整数が全て偶数(2で割れる数)であれば次の処理に行く
 while a.all?{|t| t.even?}
+    # aの整数全て2で割る
     a = a.map{|t| (t/2).to_i}
+    # １カウントする
     ans += 1
 end
 

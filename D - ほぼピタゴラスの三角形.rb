@@ -7,12 +7,14 @@
 # しかし、ヨシオくんには「ほぼピタゴラスの三角形」が何個あるのか見当がつきません。
 # 周長の上限 L および s が与えられるので、ヨシオくんに代わり、「ほぼピタゴラスの三角形」の個数を数えてください。
 
+# 途中
 l,s = gets.chomp.split.map{|t|t.to_i}
 
 result = 0
 (1..l).each do |t|
     (1..t).each do |a|
         (a + 1..t - a).each do |b|
+
             c = t - a - b
             if a.gcd(b).gcd(c) == 1
                 if a ** 2 + b ** 2 + s ** 2 == c ** 2

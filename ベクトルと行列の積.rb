@@ -7,6 +7,7 @@ B = M.times.map{gets.chomp.to_i}
 (0...N).each do |i|
     result = 0
     (0...M).each do |t|
+        # 行と列が複数ある場合にAの1つ目の[]は縦列で、2つ目の[]は横列は決まっている
         result += A[i][t] * B[t]
     end
     puts result
